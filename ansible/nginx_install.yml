@@ -1,13 +1,10 @@
 ---
 - name: Install and start Nginx on macOS via Homebrew
   hosts: local
-  become: yes
+  become: no
   tasks:
     - name: Install nginx (brew)
       command: brew install nginx
-      args:
-        warn: false
+
     - name: Start nginx service (brew services)
       command: brew services start nginx
-      args:
-        warn: false
